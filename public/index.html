@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Estudos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>CONTROLE DE ESTUDOS</h1>
+        </header>
+        
+        <section id="cadastro">
+            <h2>REGISTRAR SESSÃO</h2>
+            <form id="form-estudo">
+                <div class="campo">
+                    <label for="data">DATA</label>
+                    <input type="date" id="data" required>
+                </div>
+
+                <div class="grid-inputs">
+                    <div class="campo">
+                        <label for="enem">QUESTÕES ENEM</label>
+                        <input type="number" id="enem" min="0" value="0">
+                    </div>
+
+                    <div class="campo">
+                        <label for="obmep1">OBMEP FASE 1</label>
+                        <input type="number" id="obmep1" min="0" value="0">
+                    </div>
+
+                    <div class="campo">
+                        <label for="obmep2">OBMEP FASE 2</label>
+                        <input type="number" id="obmep2" min="0" value="0">
+                    </div>
+
+                    <div class="campo">
+                        <label for="tempo">TEMPO EXTRA (MIN)</label>
+                        <input type="number" id="tempo" min="0" value="0">
+                    </div>
+                </div>
+
+                <button type="submit" id="btn-salvar">SALVAR REGISTRO</button>
+            </form>
+        </section>
+
+        <section id="visualizacao">
+            <h2>DESEMPENHO E HISTÓRICO</h2>
+            <div class="acoes">
+                <button id="btn-conferir">EXIBIR SESSÕES PASSADAS</button>
+            </div>
+
+            <div id="tabela-historico"></div>
+        </section>
+    </main>
+
+    <script src="script-frontend.js"></script>
+</body>
+</html>

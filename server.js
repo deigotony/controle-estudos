@@ -3,14 +3,12 @@ import { conectarBanco, inicializarBanco } from './database.js';
 
 const app = express();
 const porta = process.env.PORT || 3000;
-// Configurações essenciais
+
 app.use(express.json());
 app.use(express.static('public'));
 
-// Cria a tabela ao iniciar
 inicializarBanco();
 
-// ROTA DE SALVAR (Corrigida com / no início e sem / no fim)
 app.post('/salvar', async (req, res) => {
     const { data, enem, obmep1, obmep2, tempo } = req.body;
     
@@ -30,7 +28,6 @@ app.post('/salvar', async (req, res) => {
     }
 });
 
-// ROTA DE HISTÓRICO (Corrigida)
 app.get('/historico', async (req, res) => {
     try {
         const db = await conectarBanco();
